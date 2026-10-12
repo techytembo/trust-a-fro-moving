@@ -140,13 +140,12 @@ layout: base.njk
         <h2>{{ home.gallery.title }}</h2>
         <p>{{ home.gallery.text }}</p>
       </div>
-      <a class="btn btn-primary btn-sm" href="#gallery" data-open-gallery>{{ home.gallery.buttonText }} {{ icon("arrow", 15) }}</a>
     </div>
     <div class="carousel gallery-carousel">
       <button class="carousel-btn prev" aria-label="Previous photos">{{ icon("left", 18) }}</button>
       <div class="carousel-track gallery-track">
         {% for g in gallery.items %}
-        <a class="gallery-item" href="{{ g.image }}"><img src="{{ g.image }}" srcset="{{ g.image | srcset }}" sizes="(max-width: 700px) 75vw, (max-width: 1060px) 33vw, 20vw" alt="{{ g.alt }}" loading="lazy"{% if g.position %} style="object-position: {{ g.position }}"{% endif %}></a>
+        <div class="gallery-item"><img src="{{ g.image }}" srcset="{{ g.image | srcset }}" sizes="(max-width: 700px) 75vw, (max-width: 1060px) 33vw, 20vw" alt="{{ g.alt }}" loading="lazy"{% if g.position %} style="object-position: {{ g.position }}"{% endif %}></div>
         {% endfor %}
       </div>
       <button class="carousel-btn next" aria-label="Next photos">{{ icon("right", 18) }}</button>
@@ -195,4 +194,3 @@ layout: base.njk
 
 {{ wave("--bg-quote-bottom", "--bg-footer", 1) }}
 
-<dialog class="lightbox"><img alt=""><button class="lightbox-close" aria-label="Close">×</button></dialog>

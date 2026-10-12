@@ -1,26 +1,26 @@
 {
   "items": [
     {
-      "image": "/images/uploads/gallery-1.jpg",
-      "alt": "Trust A Fro truck outside a home"
-    },
-    {
       "image": "/images/uploads/gallery-2.webp",
       "alt": "The Trust A Fro crew at the moving truck",
       "position": "50% 38%"
     },
     {
-      "image": "/images/uploads/gallery-3.webp",
-      "alt": "Trust A Fro movers ready to load the truck",
-      "position": "50% 38%"
+      "image": "/images/uploads/gallery-1.jpg",
+      "alt": "Trust A Fro truck outside a home"
+    },
+    {
+      "image": "/images/uploads/gallery-5.jpg",
+      "alt": "Boxes packed inside the truck"
     },
     {
       "image": "/images/uploads/gallery-4.jpg",
       "alt": "Furniture wrapped for the move"
     },
     {
-      "image": "/images/uploads/gallery-5.jpg",
-      "alt": "Boxes packed inside the truck"
+      "image": "/images/uploads/gallery-3.webp",
+      "alt": "Trust A Fro movers ready to load the truck",
+      "position": "50% 38%"
     }
   ]
 }

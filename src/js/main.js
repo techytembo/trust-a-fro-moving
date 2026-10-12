@@ -47,20 +47,6 @@ document.querySelectorAll(".carousel").forEach((carousel) => {
   }
 });
 
-// Gallery lightbox
-const lightbox = document.querySelector(".lightbox");
-const openPhoto = (src) => { lightbox.querySelector("img").src = src; lightbox.showModal(); };
-document.querySelectorAll(".gallery-item").forEach((item) =>
-  item.addEventListener("click", (e) => { e.preventDefault(); openPhoto(item.href); })
-);
-document.querySelector("[data-open-gallery]")?.addEventListener("click", (e) => {
-  const first = document.querySelector(".gallery-item");
-  if (first) { e.preventDefault(); openPhoto(first.href); }
-});
-lightbox?.addEventListener("click", (e) => {
-  if (e.target === lightbox || e.target.classList.contains("lightbox-close")) lightbox.close();
-});
-
 // Quote form: GitHub Pages has no form backend, so open the visitor's email app with the answers filled in
 const quoteForm = document.querySelector(".quote-form");
 quoteForm?.addEventListener("submit", (e) => {
