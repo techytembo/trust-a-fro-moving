@@ -14,13 +14,13 @@
       "alt": "Boxes packed inside the truck"
     },
     {
-      "image": "/images/uploads/gallery-4.jpg",
-      "alt": "Furniture wrapped for the move"
-    },
-    {
       "image": "/images/uploads/gallery-3.webp",
       "alt": "Trust A Fro movers ready to load the truck",
       "position": "50% 38%"
+    },
+    {
+      "image": "/images/uploads/gallery-4.jpg",
+      "alt": "Furniture wrapped for the move"
     }
   ]
 }
