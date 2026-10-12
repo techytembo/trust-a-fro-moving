@@ -240,9 +240,12 @@ p { margin: 0 0 1em; }
   .header-inner { height: 72px; }
   .brand img { height: 58px; }
   .site-nav { top: 72px; }
-  .hero { min-height: 0; }
-  .hero-photo { width: 100%; opacity: .45; -webkit-mask-image: none; mask-image: none; }
-  .hero::before { background: linear-gradient(180deg, rgb(14 82 170 / .75), rgb(14 82 170 / .6)); }
+  /* Phones: truck photo sits under the text, full strength, instead of faded behind it */
+  .hero { min-height: 0; flex-direction: column; align-items: stretch; }
+  .hero::before { display: none; }
+  .hero-inner { padding: 2.2rem 0 1.6rem; }
+  .hero-photo { position: relative; order: 2; width: 100%; height: auto; aspect-ratio: 16 / 9; object-position: center;
+    -webkit-mask-image: none; mask-image: none; }
   .hero-actions .btn { min-width: 0; flex: 1 1 100%; }
   .services-grid { grid-template-columns: 1fr 1fr; row-gap: 1.6rem; }
   .service { border-right: 0; padding: 0 .4rem; }
