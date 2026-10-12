@@ -146,7 +146,7 @@ layout: base.njk
       <button class="carousel-btn prev" aria-label="Previous photos">{{ icon("left", 18) }}</button>
       <div class="carousel-track gallery-track">
         {% for g in gallery.items %}
-        <button class="gallery-item" data-full="{{ g.image }}"><img src="{{ g.image }}" alt="{{ g.alt }}" loading="lazy"></button>
+        <button class="gallery-item"><img src="{{ g.image }}" alt="{{ g.alt }}" loading="lazy"></button>
         {% endfor %}
       </div>
       <button class="carousel-btn next" aria-label="Next photos">{{ icon("right", 18) }}</button>
@@ -170,10 +170,9 @@ layout: base.njk
       </ul>
     </div>
 
-    <form class="quote-form" name="quote" method="POST" action="/thanks/" data-netlify="true" netlify-honeypot="company_website">
+    {# GitHub Pages cannot receive forms: main.js turns the answers into an email to settings.email #}
+    <form class="quote-form" name="quote" data-email="{{ settings.email }}">
       <h3>{{ home.quote.formTitle }}</h3>
-      <input type="hidden" name="form-name" value="quote">
-      <p class="hidden"><label><span>Leave blank </span><input name="company_website"></label></p>
       <label><span>Full Name <b>*</b></span><input name="name" required autocomplete="name" placeholder="Your name"></label>
       <label><span>Phone Number <b>*</b></span><input name="phone" type="tel" required autocomplete="tel" placeholder="(208) 555-5555"></label>
       <label><span>Email <b>*</b></span><input name="email" type="email" required autocomplete="email" placeholder="you@example.com"></label>
@@ -189,6 +188,7 @@ layout: base.njk
       </label>
       <label class="span-2"><span>Message / Details</span><input name="details" placeholder="Tell us about your move (home size, items, etc.)"></label>
       <button class="btn btn-primary btn-submit" type="submit">{{ solid("send", 18) }} {{ home.quote.buttonText }} {{ solid("send", 16) }}</button>
+      <p class="form-note">Opens your email app with your details filled in. Prefer to talk? Call <a href="{{ settings.phone | telHref }}">{{ settings.phone }}</a>.</p>
     </form>
   </div>
 </section>

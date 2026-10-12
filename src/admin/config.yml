@@ -1,5 +1,5 @@
 # Decap CMS editor at /admin
-# Login: GitHub account with write access to the site repo (OAuth handled by Netlify).
+# Local editing only: run "npx decap-server" next to "npm start" (GitHub Pages has no login server).
 # Repo: https://github.com/techytembo/trust-a-fro-moving
 backend:
   name: github
@@ -12,8 +12,8 @@ local_backend: true
 media_folder: src/images/uploads
 public_folder: /images/uploads
 
-site_url: https://trustafromoving.com
-display_url: https://trustafromoving.com
+site_url: https://techytembo.github.io/trust-a-fro-moving
+display_url: https://techytembo.github.io/trust-a-fro-moving
 
 collections:
   - name: pages

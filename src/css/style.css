@@ -185,6 +185,7 @@ p { margin: 0 0 1em; }
 .quote-form input::placeholder { color: #94a3b8; }
 .quote-form input:focus, .quote-form select:focus { outline: 2px solid var(--accent); border-color: transparent; }
 .quote-form .span-2 { grid-column: span 2; }
+.form-note { grid-column: 1 / -1; margin: 0; font-size: .78rem; color: var(--muted); text-align: center; }
 .btn-submit { grid-column: 1 / -1; justify-content: center; border-radius: 6px; margin-top: .4rem; padding: .95em; }
 
 /* Lightbox */

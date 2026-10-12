@@ -10,13 +10,13 @@ nav?.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => nav.
 // Highlight the menu link for the section on screen
 const links = [...document.querySelectorAll(".site-nav a")];
 const sections = links
-  .map((a) => document.querySelector(a.getAttribute("href").replace("/", "")))
+  .map((a) => document.getElementById(a.getAttribute("href").split("#")[1]))
   .filter(Boolean);
 if ("IntersectionObserver" in window && sections.length) {
   const io = new IntersectionObserver(
     (entries) => entries.forEach((e) => {
       if (!e.isIntersecting) return;
-      links.forEach((a) => a.classList.toggle("active", a.getAttribute("href") === "/#" + e.target.id));
+      links.forEach((a) => a.classList.toggle("active", a.getAttribute("href").endsWith("#" + e.target.id)));
     }),
     { rootMargin: "-45% 0px -50% 0px" }
   );
@@ -51,12 +51,27 @@ document.querySelectorAll(".carousel").forEach((carousel) => {
 const lightbox = document.querySelector(".lightbox");
 const openPhoto = (src) => { lightbox.querySelector("img").src = src; lightbox.showModal(); };
 document.querySelectorAll(".gallery-item").forEach((item) =>
-  item.addEventListener("click", () => openPhoto(item.dataset.full))
+  item.addEventListener("click", () => openPhoto(item.querySelector("img").src))
 );
 document.querySelector("[data-open-gallery]")?.addEventListener("click", (e) => {
   const first = document.querySelector(".gallery-item");
-  if (first) { e.preventDefault(); openPhoto(first.dataset.full); }
+  if (first) { e.preventDefault(); openPhoto(first.querySelector("img").src); }
 });
 lightbox?.addEventListener("click", (e) => {
   if (e.target === lightbox || e.target.classList.contains("lightbox-close")) lightbox.close();
+});
+
+// Quote form: GitHub Pages has no form backend, so open the visitor's email app with the answers filled in
+const quoteForm = document.querySelector(".quote-form");
+quoteForm?.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const f = new FormData(quoteForm);
+  const lines = [
+    ["Name", f.get("name")], ["Phone", f.get("phone")], ["Email", f.get("email")],
+    ["Moving from", f.get("from")], ["Moving to", f.get("to")], ["Move date", f.get("move_date")],
+    ["Move type", f.get("service")], ["Details", f.get("details")],
+  ].filter(([, v]) => v).map(([k, v]) => k + ": " + v);
+  const subject = "Quote request: " + (f.get("service") || "Move") + " - " + f.get("name");
+  window.location.href = "mailto:" + quoteForm.dataset.email +
+    "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(lines.join("\n"));
 });

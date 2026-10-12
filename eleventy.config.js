@@ -1,4 +1,9 @@
+import { HtmlBasePlugin } from "@11ty/eleventy";
+
 export default function (eleventyConfig) {
+  // Rewrites root-relative links ("/css/...", "/#services") under PATH_PREFIX,
+  // so the same templates work locally ("/") and on GitHub Pages ("/trust-a-fro-moving/").
+  eleventyConfig.addPlugin(HtmlBasePlugin);
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/js");
   eleventyConfig.addPassthroughCopy("src/images");
@@ -17,5 +22,6 @@ export default function (eleventyConfig) {
   return {
     dir: { input: "src", includes: "_includes", data: "_data", output: "_site" },
     templateFormats: ["njk"],
+    pathPrefix: process.env.PATH_PREFIX || "/",
   };
 }
