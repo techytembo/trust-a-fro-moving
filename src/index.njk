@@ -4,7 +4,7 @@ layout: base.njk
 {% from "icons.njk" import icon, solid, google, wave %}
 
 <section class="hero">
-  <img class="hero-photo" src="{{ home.hero.image }}" alt="" fetchpriority="high">
+  <img class="hero-photo" src="{{ home.hero.image }}" srcset="{{ home.hero.image | srcset }}" sizes="(max-width: 700px) 100vw, 66vw" alt="Trust A Fro moving truck" fetchpriority="high">
   <div class="container hero-inner">
     <p class="hero-eyebrow">{{ home.hero.eyebrow }}</p>
     <h1>{{ home.hero.title }}</h1>
@@ -33,7 +33,7 @@ layout: base.njk
 </section>
 
 <section id="partner" class="partner">
-  <div class="partner-media"><img src="{{ home.partner.image }}" alt="Trust A Fro moving box"></div>
+  <div class="partner-media"><img src="{{ home.partner.image }}" srcset="{{ home.partner.image | srcset }}" sizes="(max-width: 700px) 100vw, 42vw" alt="Trust A Fro moving boxes" loading="lazy"></div>
   <div class="partner-copy">
     <p class="eyebrow">{{ home.partner.eyebrow }}</p>
     <h2>{{ home.partner.title }}</h2>
@@ -115,7 +115,7 @@ layout: base.njk
     <p>{{ home.areas.text | bold | safe }}</p>
     <a class="btn btn-primary" href="#contact">{{ home.areas.buttonText }} {{ icon("arrow", 16) }}</a>
   </div>
-  <div class="areas-photo"><img src="{{ home.areas.image }}" alt="Boise skyline" loading="lazy"></div>
+  <div class="areas-photo"><img src="{{ home.areas.image }}" srcset="{{ home.areas.image | srcset }}" sizes="(max-width: 700px) 100vw, (max-width: 1060px) 50vw, 32vw" alt="Boise skyline" loading="lazy"></div>
   <div class="areas-panel">
     <ul class="areas-list">
       {% for c in home.areas.cities %}<li>{{ solid("pin", 18) }} {{ c }}</li>{% endfor %}
@@ -146,7 +146,7 @@ layout: base.njk
       <button class="carousel-btn prev" aria-label="Previous photos">{{ icon("left", 18) }}</button>
       <div class="carousel-track gallery-track">
         {% for g in gallery.items %}
-        <button class="gallery-item"><img src="{{ g.image }}" alt="{{ g.alt }}" loading="lazy"></button>
+        <a class="gallery-item" href="{{ g.image }}"><img src="{{ g.image }}" srcset="{{ g.image | srcset }}" sizes="(max-width: 700px) 75vw, (max-width: 1060px) 33vw, 20vw" alt="{{ g.alt }}" loading="lazy"{% if g.position %} style="object-position: {{ g.position }}"{% endif %}></a>
         {% endfor %}
       </div>
       <button class="carousel-btn next" aria-label="Next photos">{{ icon("right", 18) }}</button>

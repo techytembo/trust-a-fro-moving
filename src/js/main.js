@@ -51,11 +51,11 @@ document.querySelectorAll(".carousel").forEach((carousel) => {
 const lightbox = document.querySelector(".lightbox");
 const openPhoto = (src) => { lightbox.querySelector("img").src = src; lightbox.showModal(); };
 document.querySelectorAll(".gallery-item").forEach((item) =>
-  item.addEventListener("click", () => openPhoto(item.querySelector("img").src))
+  item.addEventListener("click", (e) => { e.preventDefault(); openPhoto(item.href); })
 );
 document.querySelector("[data-open-gallery]")?.addEventListener("click", (e) => {
   const first = document.querySelector(".gallery-item");
-  if (first) { e.preventDefault(); openPhoto(first.querySelector("img").src); }
+  if (first) { e.preventDefault(); openPhoto(first.href); }
 });
 lightbox?.addEventListener("click", (e) => {
   if (e.target === lightbox || e.target.classList.contains("lightbox-close")) lightbox.close();

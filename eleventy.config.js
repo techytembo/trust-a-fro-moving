@@ -1,3 +1,5 @@
+import fs from "node:fs";
+import path from "node:path";
 import { HtmlBasePlugin } from "@11ty/eleventy";
 
 export default function (eleventyConfig) {
@@ -18,6 +20,21 @@ export default function (eleventyConfig) {
       .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
       .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
   );
+  // "/images/hero.webp" -> "/images/hero-800.webp 800w, ..." from sibling files named <name>-<width>.<ext>.
+  // Images uploaded through the editor have no variants and get an empty srcset.
+  eleventyConfig.addFilter("srcset", (src) => {
+    if (!src) return "";
+    const { dir, name, ext } = path.posix.parse(src);
+    const folder = path.join("src", dir);
+    if (!fs.existsSync(folder)) return "";
+    const re = new RegExp(`^${name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}-(\\d+)${ext.replace(".", "\\.")}$`);
+    return fs.readdirSync(folder)
+      .map((f) => f.match(re))
+      .filter(Boolean)
+      .sort((a, b) => a[1] - b[1])
+      .map((m) => `${dir}/${m[0]} ${m[1]}w`)
+      .join(", ");
+  });
 
   return {
     dir: { input: "src", includes: "_includes", data: "_data", output: "_site" },

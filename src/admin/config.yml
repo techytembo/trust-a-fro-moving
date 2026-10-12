@@ -140,6 +140,7 @@ collections:
             fields:
               - { label: Photo, name: image, widget: image }
               - { label: Alt text (describe the photo), name: alt, widget: string }
+              - { label: "Tile focus (optional, e.g. 50% 30% keeps the top of a tall photo)", name: position, widget: string, required: false }
 
   - name: settings
     label: Settings
