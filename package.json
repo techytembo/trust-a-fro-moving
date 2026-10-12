@@ -1,0 +1,13 @@
+{
+  "name": "trust-a-fro-moving",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Trust A Fro Moving Co. website (Eleventy + Decap CMS)",
+  "scripts": {
+    "start": "eleventy --serve --port 8080",
+    "build": "eleventy"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "3.1.2"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "items": [
+    { "icon": "home", "title": "Residential Moving", "description": "From small apartments to large homes." },
+    { "icon": "building", "title": "Commercial Moving", "description": "Keep your business moving forward." },
+    { "icon": "box", "title": "Packing & Unpacking", "description": "We pack with care and expertise." },
+    { "icon": "dolly", "title": "Loading & Unloading", "description": "Need help with just the heavy lifting? We got you!" },
+    { "icon": "truck", "title": "Long Distance Moving", "description": "Anywhere you need to go, we'll get you there." }
+  ]
+}

@@ -1,0 +1,198 @@
+---
+layout: base.njk
+---
+{% from "icons.njk" import icon, solid, google, wave %}
+
+<section class="hero">
+  <img class="hero-photo" src="{{ home.hero.image }}" alt="" fetchpriority="high">
+  <div class="container hero-inner">
+    <p class="hero-eyebrow">{{ home.hero.eyebrow }}</p>
+    <h1>{{ home.hero.title }}</h1>
+    <p class="hero-text">{{ home.hero.text }}</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary btn-lg" href="#contact">{{ solid("quote", 22) }} Get a Quote</a>
+      <a class="btn btn-white btn-lg" href="{{ settings.phone | telHref }}">{{ solid("phone", 24) }} <span><small>Call Us</small>{{ settings.phone }}</span></a>
+    </div>
+    <ul class="hero-badges">
+      {% set badgeIcons = ["shield", "pin", "check"] %}
+      {% for b in home.hero.badges %}<li>{{ icon(badgeIcons[loop.index0] or "check", 15) }} {{ b }}</li>{% endfor %}
+    </ul>
+  </div>
+</section>
+
+<section id="services" class="services">
+  <div class="container services-grid">
+    {% for s in services.items %}
+    <div class="service">
+      <span class="service-icon">{{ solid(s.icon, 40) }}</span>
+      <h3>{{ s.title }}</h3>
+      <p>{{ s.description }}</p>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<section id="partner" class="partner">
+  <div class="partner-media"><img src="{{ home.partner.image }}" alt="Trust A Fro moving box"></div>
+  <div class="partner-copy">
+    <p class="eyebrow">{{ home.partner.eyebrow }}</p>
+    <h2>{{ home.partner.title }}</h2>
+    <p>{{ home.partner.text }}</p>
+    <a class="btn btn-primary" href="#contact" data-service="Partnership inquiry">{{ solid("users", 18) }} {{ home.partner.buttonText }} {{ icon("arrow", 16) }}</a>
+  </div>
+  <div class="partner-tagline">
+    <span>{{ home.partner.tagline }}</span>
+    <svg class="swash" viewBox="0 0 120 14" aria-hidden="true"><path d="M3 10c30-7 70-9 114-6" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/></svg>
+  </div>
+</section>
+
+{{ wave("--bg-partner", "--bg-reviews", 2) }}
+
+<section id="reviews" class="reviews">
+  <div class="container">
+    <h2 class="center">{{ home.reviews.title }}</h2>
+    <p class="center reviews-sub">{{ home.reviews.subtitle }}</p>
+    <div class="carousel reviews-carousel">
+      <button class="carousel-btn prev dark" aria-label="Previous reviews">{{ icon("left", 18) }}</button>
+      <div class="reviews-row">
+        <div class="review-card google-card">
+          <div class="google-word"><span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span></div>
+          {% if settings.googleRating %}<div class="google-rating">{{ settings.googleRating }} <span class="stars">★★★★★</span></div>{% endif %}
+          {% if settings.googleReviewCount %}<p>{{ settings.googleReviewCount }} Google Reviews</p>{% endif %}
+          <a class="btn btn-primary btn-sm" href="{{ settings.googleReviewsUrl or '#reviews' }}" {% if settings.googleReviewsUrl %}target="_blank" rel="noopener"{% endif %}>Read Our Reviews {{ icon("arrow", 15) }}</a>
+        </div>
+        <div class="carousel-track reviews-track">
+          {% for r in reviews.items %}
+          <figure class="review-card">
+            <blockquote>“{{ r.text }}”</blockquote>
+            <div class="stars">{{ r.rating | stars }}</div>
+            <figcaption>
+              {% if r.photo %}<img src="{{ r.photo }}" alt="">{% else %}<span class="avatar">{{ r.name | first }}</span>{% endif %}
+              <span class="who"><strong>{{ r.name }}</strong><small>{{ r.location }}</small></span>
+              {{ google(22) }}
+            </figcaption>
+          </figure>
+          {% endfor %}
+        </div>
+      </div>
+      <button class="carousel-btn next" aria-label="Next reviews">{{ icon("right", 18) }}</button>
+    </div>
+  </div>
+</section>
+
+{{ wave("--bg-reviews", "--bg-why", 1) }}
+
+<section class="why">
+  <div class="container why-inner">
+    <h2>{{ home.why.title }}</h2>
+    {% for w in home.why.items %}
+    <div class="why-item">{{ icon(w.icon, 38) }}<span>{{ w.label }}</span></div>
+    {% endfor %}
+  </div>
+</section>
+
+{{ wave("--bg-why", "--bg-about", 2) }}
+
+<section id="about" class="about">
+  <div class="container about-inner">
+    <img class="about-img" src="{{ home.about.image }}" alt="Trust A Fro mascot with moving boxes" loading="lazy">
+    <div class="about-copy">
+      <p class="eyebrow">{{ home.about.eyebrow }}</p>
+      <h2>{{ home.about.title }}</h2>
+      <p>{{ home.about.text }}</p>
+      <a class="btn btn-primary" href="#contact">{{ home.about.buttonText }} {{ icon("arrow", 16) }}</a>
+    </div>
+    <ul class="about-points">
+      {% for p in home.about.points %}<li><span style="--cut:#E3F2FD">{{ solid(p.icon, 22) }}</span> {{ p.label }}</li>{% endfor %}
+    </ul>
+  </div>
+</section>
+
+<section id="areas" class="areas">
+  <div class="areas-copy">
+    <p class="eyebrow">{{ home.areas.eyebrow }}</p>
+    <h2>{{ home.areas.title }}</h2>
+    <p>{{ home.areas.text | bold | safe }}</p>
+    <a class="btn btn-primary" href="#contact">{{ home.areas.buttonText }} {{ icon("arrow", 16) }}</a>
+  </div>
+  <div class="areas-photo"><img src="{{ home.areas.image }}" alt="Boise skyline" loading="lazy"></div>
+  <div class="areas-panel">
+    <ul class="areas-list">
+      {% for c in home.areas.cities %}<li>{{ solid("pin", 18) }} {{ c }}</li>{% endfor %}
+    </ul>
+    <div class="idaho">
+      <svg viewBox="0 0 120 170" aria-hidden="true">
+        <path d="M18 4h14v34l6 10 6 4 2 12 8 8 3 10 8 2 7 8 6 4h28v74H6v-62l6-10-2-10 8-14-2-10z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+        <g transform="translate(26 112)" style="--cut:#06396D"><path fill-rule="evenodd" fill="#2F8BE6" d="M0-26a11 11 0 0 0-11 11c0 8.2 11 20 11 20s11-11.8 11-20A11 11 0 0 0 0-26zm0 15a4 4 0 1 1 0-8 4 4 0 0 1 0 8z"/></g>
+      </svg>
+      <span class="beyond">{{ home.areas.beyondText }}</span>
+    </div>
+  </div>
+</section>
+
+{{ wave("--bg-areas", "--bg-gallery", 1) }}
+
+<section id="gallery" class="gallery">
+  <div class="container">
+    <div class="gallery-head">
+      <div>
+        <p class="eyebrow">{{ home.gallery.eyebrow }}</p>
+        <h2>{{ home.gallery.title }}</h2>
+        <p>{{ home.gallery.text }}</p>
+      </div>
+      <a class="btn btn-primary btn-sm" href="#gallery" data-open-gallery>{{ home.gallery.buttonText }} {{ icon("arrow", 15) }}</a>
+    </div>
+    <div class="carousel gallery-carousel">
+      <button class="carousel-btn prev" aria-label="Previous photos">{{ icon("left", 18) }}</button>
+      <div class="carousel-track gallery-track">
+        {% for g in gallery.items %}
+        <button class="gallery-item" data-full="{{ g.image }}"><img src="{{ g.image }}" alt="{{ g.alt }}" loading="lazy"></button>
+        {% endfor %}
+      </div>
+      <button class="carousel-btn next" aria-label="Next photos">{{ icon("right", 18) }}</button>
+    </div>
+    <div class="dots" aria-hidden="true">{% for g in gallery.items %}<span{% if loop.first %} class="on"{% endif %}></span>{% endfor %}</div>
+  </div>
+</section>
+
+{{ wave("--bg-gallery", "--bg-quote-top", 2) }}
+
+<section id="contact" class="quote">
+  <div class="container quote-inner">
+    <div class="quote-copy">
+      <h2>{{ home.quote.title }}</h2>
+      <p>{{ home.quote.text }}</p>
+      <ul class="contact-list" style="--cut:#0756B0">
+        <li>{{ solid("phone", 22) }} <a href="{{ settings.phone | telHref }}">{{ settings.phone }}</a></li>
+        {% if settings.email %}<li>{{ solid("mail", 22) }} <a href="mailto:{{ settings.email }}">{{ settings.email }}</a></li>{% endif %}
+        {% if settings.website %}<li>{{ solid("globe", 22) }} <span>{{ settings.website }}</span></li>{% endif %}
+        <li>{{ solid("pin", 22) }} <span>{{ settings.location }}</span></li>
+      </ul>
+    </div>
+
+    <form class="quote-form" name="quote" method="POST" action="/thanks/" data-netlify="true" netlify-honeypot="company_website">
+      <h3>{{ home.quote.formTitle }}</h3>
+      <input type="hidden" name="form-name" value="quote">
+      <p class="hidden"><label><span>Leave blank </span><input name="company_website"></label></p>
+      <label><span>Full Name <b>*</b></span><input name="name" required autocomplete="name" placeholder="Your name"></label>
+      <label><span>Phone Number <b>*</b></span><input name="phone" type="tel" required autocomplete="tel" placeholder="(208) 555-5555"></label>
+      <label><span>Email <b>*</b></span><input name="email" type="email" required autocomplete="email" placeholder="you@example.com"></label>
+      <label><span>From (Current Address) <b>*</b></span><input name="from" required placeholder="City, State or ZIP"></label>
+      <label><span>Move Date <b>*</b></span><input name="move_date" type="date" required></label>
+      <label><span>To (New Address)</span><input name="to" placeholder="City, State or ZIP"></label>
+      <label><span>Move Type <b>*</b></span>
+        <select name="service" required>
+          <option value="">Select a service</option>
+          {% for s in services.items %}<option>{{ s.title }}</option>{% endfor %}
+          <option>Partnership inquiry</option>
+        </select>
+      </label>
+      <label class="span-2"><span>Message / Details</span><input name="details" placeholder="Tell us about your move (home size, items, etc.)"></label>
+      <button class="btn btn-primary btn-submit" type="submit">{{ solid("send", 18) }} {{ home.quote.buttonText }} {{ solid("send", 16) }}</button>
+    </form>
+  </div>
+</section>
+
+{{ wave("--bg-quote-bottom", "--bg-footer", 1) }}
+
+<dialog class="lightbox"><img alt=""><button class="lightbox-close" aria-label="Close">×</button></dialog>

@@ -1,0 +1,66 @@
+{
+  "hero": {
+    "eyebrow": "Reliable movers. Real people.",
+    "title": "Moving Made Simple.",
+    "text": "Trust A Fro Moving Co. is here to make your move easy, stress-free, and affordable. Whether you're moving across town or across the state, we've got you covered.",
+    "image": "/images/hero.jpg",
+    "badges": ["Licensed & Insured", "Local & Long Distance", "Reliable & Professional"]
+  },
+  "partner": {
+    "eyebrow": "Stronger together",
+    "title": "Partner With Us",
+    "text": "We value our community and the people who help us grow. Our partner program is designed for real estate agents, property managers, businesses, and service providers who want to refer trusted moving services.",
+    "buttonText": "Become a Partner",
+    "image": "/images/partner.jpg",
+    "tagline": "Good people move the world."
+  },
+  "reviews": {
+    "title": "What Our Customers Say",
+    "subtitle": "Real reviews from real people."
+  },
+  "why": {
+    "title": "Why Choose Trust A Fro?",
+    "items": [
+      { "icon": "users", "label": "Experienced & Friendly Team" },
+      { "icon": "box", "label": "Careful Handling of Your Belongings" },
+      { "icon": "clock", "label": "On-Time & Reliable" },
+      { "icon": "tag", "label": "Competitive Pricing" },
+      { "icon": "shield", "label": "Licensed & Insured" }
+    ]
+  },
+  "about": {
+    "eyebrow": "About us",
+    "title": "More Than Just Movers",
+    "text": "Trust A Fro Moving Co. is a locally owned and operated moving company based in Boise, Idaho. We take pride in providing reliable, affordable, and professional moving services with a personal touch. Our team treats your home, business, and belongings with the same care and respect we would our own.",
+    "buttonText": "Learn More About Us",
+    "image": "/images/mascot-about.png",
+    "points": [
+      { "icon": "home", "label": "Locally Owned & Operated" },
+      { "icon": "shield", "label": "Licensed & Insured" },
+      { "icon": "truck", "label": "Local & Long Distance" },
+      { "icon": "building", "label": "Residential & Commercial" },
+      { "icon": "heart", "label": "Customer Satisfaction Focused" }
+    ]
+  },
+  "areas": {
+    "eyebrow": "Our service areas",
+    "title": "Proudly Serving the Treasure Valley and Beyond",
+    "text": "We provide moving services throughout **Boise, Meridian, Nampa, Caldwell, Eagle, Star, Kuna, and surrounding areas** — and we also offer long-distance moving across Idaho and beyond.",
+    "buttonText": "View All Service Areas",
+    "image": "/images/skyline.jpg",
+    "cities": ["Boise", "Meridian", "Nampa", "Caldwell", "Eagle", "Star", "Kuna"],
+    "beyondText": "And beyond!"
+  },
+  "gallery": {
+    "eyebrow": "Moving gallery",
+    "title": "Real Moves. Real Results.",
+    "text": "Check out photos from some of our recent moves.",
+    "buttonText": "View Full Gallery"
+  },
+  "quote": {
+    "title": "Get Your Free Quote Today",
+    "text": "Tell us about your move and we'll get back to you with a fast, accurate quote.",
+    "formTitle": "Request a Quote",
+    "buttonText": "Get My Free Quote"
+  }
+}

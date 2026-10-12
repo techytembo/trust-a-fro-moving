@@ -1,0 +1,171 @@
+# Decap CMS editor at /admin
+# Login: GitHub account with write access to the site repo (OAuth handled by Netlify).
+# Repo: https://github.com/techytembo/trust-a-fro-moving
+backend:
+  name: github
+  repo: techytembo/trust-a-fro-moving
+  branch: main
+
+# Lets you test the editor on your own computer: run "npx decap-server" next to "npm start"
+local_backend: true
+
+media_folder: src/images/uploads
+public_folder: /images/uploads
+
+site_url: https://trustafromoving.com
+display_url: https://trustafromoving.com
+
+collections:
+  - name: pages
+    label: Pages
+    files:
+      - name: homepage
+        label: Homepage
+        file: src/_data/home.json
+        fields:
+          - label: Hero (top banner)
+            name: hero
+            widget: object
+            fields:
+              - { label: Small heading, name: eyebrow, widget: string }
+              - { label: Big heading, name: title, widget: string }
+              - { label: Text, name: text, widget: text }
+              - { label: Background image, name: image, widget: image }
+              - { label: Badges, name: badges, widget: list, field: { label: Badge, name: badge, widget: string } }
+          - label: Partner With Us
+            name: partner
+            widget: object
+            fields:
+              - { label: Small heading, name: eyebrow, widget: string }
+              - { label: Heading, name: title, widget: string }
+              - { label: Text, name: text, widget: text }
+              - { label: Button text, name: buttonText, widget: string }
+              - { label: Image, name: image, widget: image }
+              - { label: Tagline, name: tagline, widget: string }
+          - label: Reviews heading
+            name: reviews
+            widget: object
+            fields:
+              - { label: Heading, name: title, widget: string }
+              - { label: Subheading, name: subtitle, widget: string }
+          - label: Why Choose Us
+            name: why
+            widget: object
+            fields:
+              - { label: Heading, name: title, widget: string }
+              - label: Items
+                name: items
+                widget: list
+                fields:
+                  - { label: Icon, name: icon, widget: select, options: &icons [{ label: "House", value: "home" }, { label: "Building", value: "building" }, { label: "Box", value: "box" }, { label: "Hand truck", value: "dolly" }, { label: "Truck", value: "truck" }, { label: "People", value: "users" }, { label: "Clock", value: "clock" }, { label: "Price tag", value: "tag" }, { label: "Shield", value: "shield" }, { label: "Heart", value: "heart" }, { label: "Map pin", value: "pin" }] }
+                  - { label: Label, name: label, widget: string }
+          - label: About Us
+            name: about
+            widget: object
+            fields:
+              - { label: Small heading, name: eyebrow, widget: string }
+              - { label: Heading, name: title, widget: string }
+              - { label: Text, name: text, widget: text }
+              - { label: Button text, name: buttonText, widget: string }
+              - { label: Image, name: image, widget: image }
+              - label: Highlights
+                name: points
+                widget: list
+                fields:
+                  - { label: Icon, name: icon, widget: select, options: *icons }
+                  - { label: Label, name: label, widget: string }
+          - label: Service Areas
+            name: areas
+            widget: object
+            fields:
+              - { label: Small heading, name: eyebrow, widget: string }
+              - { label: Heading, name: title, widget: string }
+              - { label: "Text (wrap words in **double stars** to make them bold)", name: text, widget: text }
+              - { label: Button text, name: buttonText, widget: string }
+              - { label: Image, name: image, widget: image }
+              - { label: Cities, name: cities, widget: list, field: { label: City, name: city, widget: string } }
+              - { label: Map label, name: beyondText, widget: string }
+          - label: Gallery heading
+            name: gallery
+            widget: object
+            fields:
+              - { label: Small heading, name: eyebrow, widget: string }
+              - { label: Heading, name: title, widget: string }
+              - { label: Text, name: text, widget: text }
+              - { label: Button text, name: buttonText, widget: string }
+          - label: Quote section
+            name: quote
+            widget: object
+            fields:
+              - { label: Heading, name: title, widget: string }
+              - { label: Text, name: text, widget: text }
+              - { label: Form heading, name: formTitle, widget: string }
+              - { label: Button text, name: buttonText, widget: string }
+
+  - name: content
+    label: Content
+    files:
+      - name: services
+        label: Services
+        file: src/_data/services.json
+        fields:
+          - label: Services
+            name: items
+            widget: list
+            fields:
+              - { label: Icon, name: icon, widget: select, options: *icons }
+              - { label: Title, name: title, widget: string }
+              - { label: Description, name: description, widget: string }
+      - name: reviews
+        label: Reviews
+        file: src/_data/reviews.json
+        fields:
+          - label: Reviews
+            name: items
+            widget: list
+            summary: "{{fields.name}} ({{fields.location}})"
+            fields:
+              - { label: Name, name: name, widget: string }
+              - { label: Location, name: location, widget: string }
+              - { label: Rating, name: rating, widget: number, value_type: int, min: 1, max: 5, default: 5 }
+              - { label: Review text, name: text, widget: text }
+              - { label: Photo (optional), name: photo, widget: image, required: false }
+      - name: gallery
+        label: Gallery
+        file: src/_data/gallery.json
+        fields:
+          - label: Photos
+            name: items
+            widget: list
+            fields:
+              - { label: Photo, name: image, widget: image }
+              - { label: Alt text (describe the photo), name: alt, widget: string }
+
+  - name: settings
+    label: Settings
+    files:
+      - name: site
+        label: Business info, colors & logo
+        file: src/_data/settings.json
+        fields:
+          - { label: Business name, name: businessName, widget: string }
+          - { label: Phone, name: phone, widget: string }
+          - { label: Email, name: email, widget: string, required: false }
+          - { label: Website, name: website, widget: string, required: false }
+          - { label: Location, name: location, widget: string }
+          - { label: USDOT number, name: usdot, widget: string, required: false }
+          - { label: Logo (wide), name: logo, widget: image }
+          - { label: Google reviews link, name: googleReviewsUrl, widget: string, required: false }
+          - { label: Google rating (e.g. 5.0), name: googleRating, widget: string, required: false }
+          - { label: Google review count (e.g. 100+), name: googleReviewCount, widget: string, required: false }
+          - { label: Facebook link, name: facebookUrl, widget: string, required: false }
+          - { label: Instagram link, name: instagramUrl, widget: string, required: false }
+          - label: Colors
+            name: colors
+            widget: object
+            fields:
+              - { label: Primary, name: primary, widget: color }
+              - { label: Secondary, name: secondary, widget: color }
+              - { label: Accent, name: accent, widget: color }
+              - { label: Text, name: text, widget: color }
+          - { label: Font (Google Fonts name), name: font, widget: string }

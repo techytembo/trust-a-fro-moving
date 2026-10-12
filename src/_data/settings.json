@@ -1,0 +1,21 @@
+{
+  "businessName": "Trust A Fro Moving Co.",
+  "phone": "208-809-1050",
+  "email": "trustafromoving@gmail.com",
+  "website": "TrustAFro.com",
+  "location": "Boise, Idaho",
+  "usdot": "4177107",
+  "logo": "/images/logo-wide.png",
+  "googleReviewsUrl": "",
+  "googleRating": "",
+  "googleReviewCount": "",
+  "facebookUrl": "",
+  "instagramUrl": "",
+  "colors": {
+    "primary": "#0B5FC4",
+    "secondary": "#013061",
+    "accent": "#2F8BE6",
+    "text": "#0B1B3F"
+  },
+  "font": "Poppins"
+}

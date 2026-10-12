@@ -1,0 +1,67 @@
+{# Line icons (icon) and filled icons (solid), 24x24, colored by currentColor.
+   Names used by editable content must match the select options in admin/config.yml.
+   Inside solid icons, "--cut" is the color of cut-out details (defaults to white). #}
+{% macro icon(name, size=32) %}
+<svg class="icon" width="{{ size }}" height="{{ size }}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+{% if name == "home" %}<path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v10h5v-6h4v6h5V10"/>
+{% elif name == "building" %}<rect x="4" y="3" width="10" height="18"/><path d="M14 9h6v12h-6"/><path d="M7 7h1M10 7h1M7 11h1M10 11h1M7 15h1M10 15h1M17 13h1M17 17h1"/>
+{% elif name == "box" %}<path d="M21 8 12 3 3 8v8l9 5 9-5z"/><path d="M3 8l9 5 9-5M12 13v8M7.5 5.5l9 5"/>
+{% elif name == "dolly" %}<path d="M4 3h2l3 13"/><circle cx="10" cy="19" r="2"/><path d="M12 19h8"/><rect x="11" y="6" width="8" height="8" rx="1" transform="rotate(-12 15 10)"/>
+{% elif name == "truck" %}<path d="M2 6h12v10H2zM14 9h4l3 3v4h-7"/><circle cx="6" cy="18" r="2"/><circle cx="17" cy="18" r="2"/>
+{% elif name == "users" %}<circle cx="9" cy="7.5" r="2.8"/><circle cx="4.5" cy="9" r="2"/><circle cx="13.5" cy="9" r="2"/><path d="M4.5 19.5c0-3 2-5.2 4.5-5.2s4.5 2.2 4.5 5.2M1 18c0-2.2 1.4-3.8 3.4-3.8M17 18c0-2.2-1.4-3.8-3.4-3.8"/><path d="M15 21c.4-2.7 2.3-4.5 4.5-4.5"/>
+{% elif name == "clock" %}<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>
+{% elif name == "tag" %}<path d="M3 12V4h8l10 10-8 8z"/><circle cx="7.5" cy="8.5" r="1.5"/>
+{% elif name == "shield" %}<path d="M12 3 4 6v6c0 4.5 3.4 8 8 9 4.6-1 8-4.5 8-9V6z"/><path d="m9 12 2 2 4-4"/>
+{% elif name == "heart" %}<path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/>
+{% elif name == "pin" %}<path d="M12 21s-6-5.4-6-11a6 6 0 1 1 12 0c0 5.6-6 11-6 11z"/><circle cx="12" cy="10" r="2.2"/>
+{% elif name == "check" %}<circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/>
+{% elif name == "arrow" %}<path d="M5 12h14M13 6l6 6-6 6"/>
+{% elif name == "left" %}<path d="M19 12H5M11 6l-6 6 6 6"/>
+{% elif name == "right" %}<path d="M5 12h14M13 6l6 6-6 6"/>
+{% else %}<circle cx="12" cy="12" r="9"/>
+{% endif %}
+</svg>
+{% endmacro %}
+
+{% macro solid(name, size=32) %}
+<svg class="icon" width="{{ size }}" height="{{ size }}" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+{% if name == "home" %}<path d="M12 2.6 1.5 11.6h3V21.5h6v-6.5h3v6.5h6v-9.9h3z"/>
+{% elif name == "building" %}<path fill-rule="evenodd" d="M3 21.5V2.5h11.5v6H21v13h-7v-4h-3.5v4zM6 5.5v2.2h2.2V5.5zm4.2 0v2.2h2.2V5.5zM6 9.7v2.2h2.2V9.7zm4.2 0v2.2h2.2V9.7zM6 13.9v2.2h2.2v-2.2zm4.2 0v2.2h2.2v-2.2zm6.3-2.4v2.2h2.2v-2.2zm0 4.2v2.2h2.2v-2.2z"/>
+{% elif name == "box" %}<path d="M12 1.8 21.5 6.6 12 11.4 2.5 6.6z" opacity=".72"/><path d="M2.5 7.9 11.3 12.4v9.8L2.5 17.7z"/><path d="M21.5 7.9 12.7 12.4v9.8l8.8-4.5z" opacity=".86"/>
+{% elif name == "dolly" %}<path d="M2.5 3.5h2.8l3.1 13.3H21" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="8.8" cy="19.6" r="2.2"/><rect x="10.3" y="9" width="8.8" height="6.4" rx=".8"/><rect x="11.6" y="3.4" width="6.4" height="4.9" rx=".8" opacity=".82"/>
+{% elif name == "truck" %}<path d="M1 4.5h13.5V16H1z"/><path d="M15.5 8h4.2l3.3 3.8V16h-7.5z"/><circle cx="5.8" cy="17.6" r="2.5" stroke="var(--cut, #fff)" stroke-width="1.3"/><circle cx="18.3" cy="17.6" r="2.5" stroke="var(--cut, #fff)" stroke-width="1.3"/>
+{% elif name == "shield" %}<path d="M12 1.8 3.8 5v6.2c0 5.1 3.5 9.5 8.2 11 4.7-1.5 8.2-5.9 8.2-11V5z"/><path d="m8.4 12 2.6 2.6 4.7-5.2" fill="none" stroke="var(--cut, #fff)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+{% elif name == "heart" %}<path d="M12 21.2S3 15.8 3 9.3a4.9 4.9 0 0 1 9-2.7 4.9 4.9 0 0 1 9 2.7c0 6.5-9 11.9-9 11.9z"/>
+{% elif name == "pin" %}<path fill-rule="evenodd" d="M12 1.8a7.2 7.2 0 0 0-7.2 7.2c0 5.4 7.2 13.2 7.2 13.2s7.2-7.8 7.2-13.2A7.2 7.2 0 0 0 12 1.8zm0 9.9a2.6 2.6 0 1 1 0-5.2 2.6 2.6 0 0 1 0 5.2z"/>
+{% elif name == "phone" %}<path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/>
+{% elif name == "mail" %}<rect x="1.8" y="4.5" width="20.4" height="15" rx="2"/><path d="m2.8 6.2 9.2 7.1 9.2-7.1" fill="none" stroke="var(--cut, #fff)" stroke-width="1.7" stroke-linejoin="round"/>
+{% elif name == "globe" %}<circle cx="12" cy="12" r="10.2"/><path d="M1.8 12h20.4M12 1.8c3.1 3 3.1 17.4 0 20.4M12 1.8c-3.1 3-3.1 17.4 0 20.4M3.5 6.8h17M3.5 17.2h17" fill="none" stroke="var(--cut, #fff)" stroke-width="1.3"/>
+{% elif name == "users" %}<circle cx="9" cy="7.6" r="3.6"/><path d="M1.8 20.5c0-4.2 3.2-7 7.2-7s7.2 2.8 7.2 7z"/><circle cx="17.2" cy="8.6" r="2.9" opacity=".82"/><path d="M15.7 13.4c3.7-.4 6.5 2 6.5 6.1h-4.6c0-2.6-.7-4.6-1.9-6.1z" opacity=".82"/>
+{% elif name == "quote" %}<rect x="3.8" y="2.2" width="16.4" height="19.6" rx="2.2"/><path d="M7.8 7.6h8.4M7.8 11.8h8.4M7.8 16h5.4" fill="none" stroke="var(--cut, #fff)" stroke-width="1.8" stroke-linecap="round"/>
+{% elif name == "send" %}<path d="M22 2.2 1.8 10.4l7.4 3.2L19 5.2l-8.2 9.6.3 7 3.4-4.6 4.4 3.2z"/>
+{% else %}<circle cx="12" cy="12" r="9"/>
+{% endif %}
+</svg>
+{% endmacro %}
+
+{% macro google(size=24) %}
+<svg class="icon" width="{{ size }}" height="{{ size }}" viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="m6.3 14.7 6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg>
+{% endmacro %}
+
+{% macro facebook(size=26) %}
+<svg class="icon" width="{{ size }}" height="{{ size }}" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11.5" fill="#1877F2"/><path fill="#fff" d="M13.4 19.6v-6.1h2.1l.3-2.5h-2.4V9.5c0-.7.2-1.2 1.2-1.2h1.3V6.1a17 17 0 0 0-1.9-.1c-1.9 0-3.1 1.1-3.1 3.2V11H8.8v2.5h2.1v6.1z"/></svg>
+{% endmacro %}
+
+{% macro instagram(size=26) %}
+<svg class="icon" width="{{ size }}" height="{{ size }}" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="igGrad" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#FEDA75"/><stop offset=".35" stop-color="#FA7E1E"/><stop offset=".62" stop-color="#D62976"/><stop offset="1" stop-color="#4F5BD5"/></linearGradient></defs><rect x=".8" y=".8" width="22.4" height="22.4" rx="6.5" fill="url(#igGrad)"/><rect x="5.8" y="5.8" width="12.4" height="12.4" rx="3.8" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="12" cy="12" r="3" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="16.4" cy="7.6" r="1" fill="#fff"/></svg>
+{% endmacro %}
+
+{# Wavy divider: "from"/"to" are the CSS color variables of the sections above and below. #}
+{% macro wave(from, to, variant=1) %}
+<div class="wave" style="background:var({{ to }})" aria-hidden="true">
+  <svg viewBox="0 0 1440 70" preserveAspectRatio="none">
+    {% if variant == 2 %}<path style="fill:var({{ from }})" d="M0-2h1440v26c-190 34-420 46-700 22C460 24 220 10 0 38z"/>
+    {% else %}<path style="fill:var({{ from }})" d="M0-2h1440v42c-260-34-520-38-760-10C440 60 210 58 0 26z"/>{% endif %}
+  </svg>
+</div>
+{% endmacro %}

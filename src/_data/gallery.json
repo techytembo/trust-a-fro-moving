@@ -1,0 +1,9 @@
+{
+  "items": [
+    { "image": "/images/uploads/gallery-1.jpg", "alt": "Trust A Fro truck outside a home" },
+    { "image": "/images/uploads/gallery-2.jpg", "alt": "Movers carrying a wrapped sofa" },
+    { "image": "/images/uploads/gallery-3.jpg", "alt": "Crew loading the truck" },
+    { "image": "/images/uploads/gallery-4.jpg", "alt": "Furniture wrapped for the move" },
+    { "image": "/images/uploads/gallery-5.jpg", "alt": "Boxes packed inside the truck" }
+  ]
+}

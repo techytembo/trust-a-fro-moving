@@ -1,0 +1,67 @@
+{% from "icons.njk" import icon, solid, google, facebook, instagram %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title or settings.businessName + " | Boise Movers" }}</title>
+  <meta name="description" content="{{ home.hero.text }}">
+  <link rel="icon" href="/images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family={{ settings.font | replace(' ', '+') }}:wght@400;500;600;700;800&family=Permanent+Marker&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    :root {
+      --primary: {{ settings.colors.primary }};
+      --secondary: {{ settings.colors.secondary }};
+      --accent: {{ settings.colors.accent }};
+      --text: {{ settings.colors.text }};
+      --font: "{{ settings.font }}", system-ui, sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/"><img src="{{ settings.logo }}" alt="{{ settings.businessName }}"></a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+      <nav class="site-nav">
+        <a class="active" href="/#top">Home</a>
+        <a href="/#services">Services</a>
+        <a href="/#partner">Partner With Us</a>
+        <a href="/#about">About Us</a>
+        <a href="/#reviews">Reviews</a>
+        <a href="/#areas">Service Areas</a>
+        <a href="/#gallery">Gallery</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+      <a class="btn btn-primary btn-header" href="/#contact">{{ solid("quote", 18) }} Get a Quote</a>
+    </div>
+  </header>
+
+  <main id="top">
+    {{ content | safe }}
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-top">
+      <a href="/"><img class="footer-logo" src="{{ settings.logo }}" alt="{{ settings.businessName }}"></a>
+      <nav class="footer-nav">
+        <a href="/#top">Home</a><a href="/#services">Services</a><a href="/#partner">Partner With Us</a><a href="/#about">About Us</a>
+        <a href="/#reviews">Reviews</a><a href="/#areas">Service Areas</a><a href="/#gallery">Gallery</a><a href="/#contact">Contact</a>
+      </nav>
+      <div class="social">
+        <a href="{{ settings.facebookUrl or '#' }}" aria-label="Facebook" {% if settings.facebookUrl %}target="_blank" rel="noopener"{% endif %}>{{ facebook(26) }}</a>
+        <a href="{{ settings.instagramUrl or '#' }}" aria-label="Instagram" {% if settings.instagramUrl %}target="_blank" rel="noopener"{% endif %}>{{ instagram(26) }}</a>
+        <a href="{{ settings.googleReviewsUrl or '#' }}" aria-label="Google reviews" {% if settings.googleReviewsUrl %}target="_blank" rel="noopener"{% endif %}>{{ google(26) }}</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© {{ "" | year }} {{ settings.businessName }} All Rights Reserved.</p>
+      <p>{% if settings.usdot %}USDOT {{ settings.usdot }} | {% endif %}Licensed &amp; Insured | {{ settings.location }}</p>
+    </div>
+  </footer>
+  <script src="/js/main.js"></script>
+</body>
+</html>
