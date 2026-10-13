@@ -96,7 +96,13 @@
   "gallery": {
     "eyebrow": "Moving gallery",
     "title": "Real Moves. Real Results.",
-    "text": "Check out photos from some of our recent moves."
+    "text": "Check out photos from some of our recent moves.",
+    "video": {
+      "desktop": "/images/video/crew-stairs-720.mp4",
+      "mobile": "/images/video/crew-stairs-480.mp4",
+      "poster": "/images/video/crew-stairs-poster.webp",
+      "label": "The Trust A Fro crew carrying a wrapped sofa up a staircase"
+    }
   },
   "quote": {
     "title": "Get Your Free Quote Today",

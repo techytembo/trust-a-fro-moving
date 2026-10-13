@@ -141,6 +141,16 @@ layout: base.njk
         <p>{{ home.gallery.text }}</p>
       </div>
     </div>
+    {% set v = home.gallery.video %}
+    {% if v and v.desktop %}
+    <figure class="gallery-video">
+      <img class="gallery-video-bg" src="{{ v.poster }}" alt="" aria-hidden="true" loading="lazy">
+      <video muted loop playsinline preload="none" poster="{{ v.poster }}" aria-label="{{ v.label }}">
+        {% if v.mobile %}<source src="{{ v.mobile }}" type="video/mp4" media="(max-width: 700px)">{% endif %}
+        <source src="{{ v.desktop }}" type="video/mp4">
+      </video>
+    </figure>
+    {% endif %}
     <div class="carousel gallery-carousel">
       <button class="carousel-btn prev" aria-label="Previous photos">{{ icon("left", 18) }}</button>
       <div class="carousel-track gallery-track">

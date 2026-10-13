@@ -47,6 +47,18 @@ document.querySelectorAll(".carousel").forEach((carousel) => {
   }
 });
 
+// Gallery video: plays muted only while on screen; people who prefer reduced motion get controls instead
+const video = document.querySelector(".gallery-video video");
+if (video) {
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    video.controls = true;
+  } else if ("IntersectionObserver" in window) {
+    new IntersectionObserver(([e]) => (e.isIntersecting ? video.play().catch(() => {}) : video.pause()), { threshold: 0.25 }).observe(video);
+  } else {
+    video.play().catch(() => {});
+  }
+}
+
 // Quote form: GitHub Pages has no form backend, so open the visitor's email app with the answers filled in
 const quoteForm = document.querySelector(".quote-form");
 quoteForm?.addEventListener("submit", (e) => {
