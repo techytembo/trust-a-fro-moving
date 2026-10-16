@@ -180,7 +180,7 @@ layout: base.njk
     </div>
 
     {# GitHub Pages cannot receive forms: main.js turns the answers into an email to settings.email #}
-    <form class="quote-form" name="quote" data-email="{{ settings.email }}">
+    <form class="quote-form" name="quote" data-email="{{ settings.email }}" data-sms="{{ settings.phone | telHref | replace('tel:', '') }}">
       <h3>{{ home.quote.formTitle }}</h3>
       <label><span>Full Name <b>*</b></span><input name="name" required autocomplete="name" placeholder="Your name"></label>
       <label><span>Phone Number <b>*</b></span><input name="phone" type="tel" required autocomplete="tel" placeholder="(208) 555-5555"></label>
@@ -192,12 +192,15 @@ layout: base.njk
         <select name="service" required>
           <option value="">Select a service</option>
           {% for s in services.items %}<option>{{ s.title }}</option>{% endfor %}
-          <option>Partnership inquiry</option>
         </select>
       </label>
       <label class="span-2"><span>Message / Details</span><input name="details" placeholder="Tell us about your move (home size, items, etc.)"></label>
-      <button class="btn btn-primary btn-submit" type="submit">{{ solid("send", 18) }} {{ home.quote.buttonText }} {{ solid("send", 16) }}</button>
-      <p class="form-note">Opens your email app with your details filled in. Prefer to talk? Call <a href="{{ settings.phone | telHref }}">{{ settings.phone }}</a>.</p>
+      <p class="submit-label">{{ home.quote.buttonText }}:</p>
+      <div class="submit-row">
+        <button class="btn btn-primary btn-submit" type="submit" value="text">{{ solid("chat", 18) }} Text Us</button>
+        <button class="btn btn-primary btn-submit" type="submit" value="email">{{ solid("send", 18) }} Email Us</button>
+      </div>
+      <p class="form-note">Opens your texting or email app with your details filled in. Prefer to talk? Call <a href="{{ settings.phone | telHref }}">{{ settings.phone }}</a>.</p>
     </form>
   </div>
 </section>

@@ -52,8 +52,8 @@
         <a href="/#reviews">Reviews</a><a href="/#areas">Service Areas</a><a href="/#gallery">Gallery</a><a href="/#contact">Contact</a>
       </nav>
       <div class="social">
-        <a href="{{ settings.facebookUrl or '#' }}" aria-label="Facebook" {% if settings.facebookUrl %}target="_blank" rel="noopener"{% endif %}>{{ facebook(26) }}</a>
-        <a href="{{ settings.instagramUrl or '#' }}" aria-label="Instagram" {% if settings.instagramUrl %}target="_blank" rel="noopener"{% endif %}>{{ instagram(26) }}</a>
+        {% if settings.facebookUrl %}<a href="{{ settings.facebookUrl }}" aria-label="Facebook" target="_blank" rel="noopener">{{ facebook(26) }}</a>{% endif %}
+        {% if settings.instagramUrl %}<a href="{{ settings.instagramUrl }}" aria-label="Instagram" target="_blank" rel="noopener">{{ instagram(26) }}</a>{% endif %}
         <a href="{{ settings.googleReviewsUrl or '#' }}" aria-label="Google reviews" {% if settings.googleReviewsUrl %}target="_blank" rel="noopener"{% endif %}>{{ google(26) }}</a>
       </div>
     </div>

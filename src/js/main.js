@@ -77,6 +77,11 @@ quoteForm?.addEventListener("submit", (e) => {
     ["Move type", f.get("service")], ["Details", f.get("details")],
   ].filter(([, v]) => v).map(([k, v]) => k + ": " + v);
   const subject = "Quote request: " + (f.get("service") || "Move") + " - " + f.get("name");
+  if (e.submitter?.value === "text") {
+    // "?&body=" works on both iPhone and Android
+    window.location.href = "sms:" + quoteForm.dataset.sms + "?&body=" + encodeURIComponent(subject + "\n" + lines.join("\n"));
+    return;
+  }
   window.location.href = "mailto:" + quoteForm.dataset.email +
     "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(lines.join("\n"));
 });
