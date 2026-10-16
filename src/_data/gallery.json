@@ -1,9 +1,19 @@
 {
   "items": [
     {
-      "image": "/images/uploads/gallery-2.webp",
-      "alt": "The Trust A Fro crew at the moving truck",
-      "position": "50% 38%"
+      "image": "/images/uploads/gallery-7.webp",
+      "alt": "Three Trust A Fro movers standing in front of the branded moving truck",
+      "position": "50% 55%"
+    },
+    {
+      "image": "/images/uploads/gallery-8.webp",
+      "alt": "A mover wheeling wrapped furniture up the ramp into the truck",
+      "position": "50% 50%"
+    },
+    {
+      "image": "/images/uploads/gallery-9.webp",
+      "alt": "A truck neatly loaded with furniture wrapped in plastic",
+      "position": "50% 60%"
     },
     {
       "image": "/images/uploads/gallery-6.webp",
@@ -11,9 +21,19 @@
       "position": "50% 45%"
     },
     {
-      "image": "/images/uploads/gallery-3.webp",
-      "alt": "Trust A Fro movers ready to load the truck",
+      "image": "/images/uploads/gallery-10.webp",
+      "alt": "A mover carrying a large item up a carpeted staircase",
+      "position": "50% 40%"
+    },
+    {
+      "image": "/images/uploads/gallery-2.webp",
+      "alt": "The Trust A Fro crew at the moving truck",
       "position": "50% 38%"
+    },
+    {
+      "image": "/images/uploads/gallery-11.webp",
+      "alt": "A happy customer taking a selfie with two Trust A Fro movers",
+      "position": "50% 25%"
     }
   ]
 }
