@@ -1,0 +1,38 @@
+{
+  "hero": {
+    "eyebrow": "Stronger together",
+    "title": "Let’s Move Forward Together.",
+    "text": "We collaborate with local professionals to make moving easier for the people they serve.",
+    "buttonText": "Become a Partner",
+    "image": "/images/partner-hero.webp",
+    "imageAlt": "The Trust A Fro mascot surrounded by moving boxes"
+  },
+  "who": {
+    "eyebrow": "Who we work with",
+    "title": "Good People Move the World.",
+    "text": "We welcome conversations with local professionals who help people move into their next chapter.",
+    "items": [
+      { "icon": "home", "title": "Real Estate Agents", "text": "Help buyers and sellers connect with moving support." },
+      { "icon": "building", "title": "Property Managers", "text": "Support resident move-ins, move-outs, and transitions." },
+      { "icon": "key", "title": "Apartment Communities", "text": "Offer residents a local moving contact." },
+      { "icon": "users", "title": "Local Businesses", "text": "Explore collaboration and client referrals." }
+    ]
+  },
+  "steps": {
+    "eyebrow": "How it works",
+    "title": "A Simple Way to Work Together",
+    "items": [
+      { "title": "Introduce Your Business", "text": "Tell us about your organization and the people you serve." },
+      { "title": "Discuss the Fit", "text": "We’ll connect to discuss potential collaboration and service needs." },
+      { "title": "Help Clients Move", "text": "When appropriate, connect clients with our team for moving estimates." }
+    ]
+  },
+  "form": {
+    "eyebrow": "Let’s connect",
+    "title": "Become a Trust A Fro Partner",
+    "text": "Tell us a little about your business. We’ll review your inquiry and reach out to discuss next steps.",
+    "formTitle": "Partnership Inquiry",
+    "buttonText": "Send Partnership Inquiry",
+    "types": ["Real Estate Agent", "Property Manager", "Apartment Community", "Local Business", "Other"]
+  }
+}

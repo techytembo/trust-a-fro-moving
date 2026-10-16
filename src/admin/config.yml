@@ -138,6 +138,56 @@ collections:
               - { label: Rating, name: rating, widget: number, value_type: int, min: 1, max: 5, default: 5 }
               - { label: Review text, name: text, widget: text }
               - { label: Photo (optional), name: photo, widget: image, required: false }
+      - name: partners
+        label: Partner With Us page
+        file: src/_data/partners.json
+        fields:
+          - label: Top banner
+            name: hero
+            widget: object
+            fields:
+              - { label: Small heading, name: eyebrow, widget: string }
+              - { label: Title, name: title, widget: string }
+              - { label: Text, name: text, widget: text }
+              - { label: Button text, name: buttonText, widget: string }
+              - { label: Image, name: image, widget: image }
+              - { label: Image description, name: imageAlt, widget: string }
+          - label: Who we work with
+            name: who
+            widget: object
+            fields:
+              - { label: Small heading, name: eyebrow, widget: string }
+              - { label: Title, name: title, widget: string }
+              - { label: Text, name: text, widget: text }
+              - label: Cards
+                name: items
+                widget: list
+                fields:
+                  - { label: Icon, name: icon, widget: select, options: [{ label: "House", value: "home" }, { label: "Building", value: "building" }, { label: "Key", value: "key" }, { label: "People", value: "users" }, { label: "Box", value: "box" }, { label: "Truck", value: "truck" }, { label: "Heart", value: "heart" }, { label: "Map pin", value: "pin" }] }
+                  - { label: Title, name: title, widget: string }
+                  - { label: Text, name: text, widget: string }
+          - label: How it works
+            name: steps
+            widget: object
+            fields:
+              - { label: Small heading, name: eyebrow, widget: string }
+              - { label: Title, name: title, widget: string }
+              - label: Steps
+                name: items
+                widget: list
+                fields:
+                  - { label: Title, name: title, widget: string }
+                  - { label: Text, name: text, widget: string }
+          - label: Inquiry form
+            name: form
+            widget: object
+            fields:
+              - { label: Small heading, name: eyebrow, widget: string }
+              - { label: Title, name: title, widget: string }
+              - { label: Text, name: text, widget: text }
+              - { label: Form title, name: formTitle, widget: string }
+              - { label: Button text, name: buttonText, widget: string }
+              - { label: Partnership types, name: types, widget: list }
       - name: gallery
         label: Gallery
         file: src/_data/gallery.json

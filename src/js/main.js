@@ -8,7 +8,7 @@ toggle?.addEventListener("click", () => {
 nav?.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => nav.classList.remove("open")));
 
 // Highlight the menu link for the section on screen
-const links = [...document.querySelectorAll(".site-nav a")];
+const links = [...document.querySelectorAll(".site-nav a")].filter((a) => a.pathname === location.pathname && a.hash);
 const sections = links
   .map((a) => document.getElementById(a.getAttribute("href").split("#")[1]))
   .filter(Boolean);
@@ -60,7 +60,7 @@ if (video) {
 }
 
 // Quote form: GitHub Pages has no form backend, so open the visitor's email app with the answers filled in
-const quoteForm = document.querySelector(".quote-form");
+const quoteForm = document.querySelector('form[name="quote"]');
 quoteForm?.addEventListener("submit", (e) => {
   e.preventDefault();
   const f = new FormData(quoteForm);
@@ -71,5 +71,19 @@ quoteForm?.addEventListener("submit", (e) => {
   ].filter(([, v]) => v).map(([k, v]) => k + ": " + v);
   const subject = "Quote request: " + (f.get("service") || "Move") + " - " + f.get("name");
   window.location.href = "mailto:" + quoteForm.dataset.email +
+    "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(lines.join("\n"));
+});
+
+// Partner form: same idea as the quote form, on the Partner With Us page
+const partnerForm = document.querySelector(".partner-form");
+partnerForm?.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const f = new FormData(partnerForm);
+  const lines = [
+    ["Name", f.get("name")], ["Company", f.get("company")], ["Email", f.get("email")], ["Phone", f.get("phone")],
+    ["Partnership type", f.get("partner_type")], ["City / service area", f.get("area")], ["Message", f.get("message")],
+  ].filter(([, v]) => v).map(([k, v]) => k + ": " + v);
+  const subject = "Partnership inquiry: " + (f.get("company") || f.get("name"));
+  window.location.href = "mailto:" + partnerForm.dataset.email +
     "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(lines.join("\n"));
 });

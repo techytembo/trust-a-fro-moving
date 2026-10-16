@@ -1,7 +1,60 @@
 {
   "items": [
-    { "name": "Customer name", "location": "City, ID", "rating": 5, "text": "PLACEHOLDER — paste a real Google review here.", "photo": "" },
-    { "name": "Customer name", "location": "City, ID", "rating": 5, "text": "PLACEHOLDER — paste a real Google review here.", "photo": "" },
-    { "name": "Customer name", "location": "City, ID", "rating": 5, "text": "PLACEHOLDER — paste a real Google review here.", "photo": "" }
+    {
+      "name": "Tina A.",
+      "location": "Google review",
+      "rating": 5,
+      "text": "I was recommended Trust A Fro from a friend who could not say enough nice things about them. I texted them and they sent me an estimate and we scheduled a date. When Etienne & Bureze arrived they were so pleasant. I was very worried that all of my stuff would not fit in the POD, but Etienne very calmly said I will make it work. They were very careful with my furniture wrapping it with care and loaded the POD carefully making sure all my furniture and boxes fit perfectly and efficiently. They finished within the estimated time and their prices are more than fair. HIRE TRUST A FRO, you will NOT be disappointed!",
+      "photo": ""
+    },
+    {
+      "name": "Aleja S.",
+      "location": "Google review",
+      "rating": 5,
+      "text": "These guys are amazing! My daughter recently graduated from college at the University of Utah. I contacted them to help us move our daughter’s belongings from SLC back to Boise. I compared rates, their rate was the best by far. I worked with Etienne setting it all up, finalizing arrangements, and brothers Bureze and Muto made the trip. They did a fantastic job! Communication was great, everything arrived here in great condition, well padded and packed. I would highly recommend them to anyone looking to move short or long distances.",
+      "photo": ""
+    },
+    {
+      "name": "Brandy M.",
+      "location": "Google review",
+      "rating": 5,
+      "text": "Etienne and Bureze were fantastic! They were professional, friendly, and handled everything with great care. They went above and beyond to help me disassemble a piece of furniture that I could not figure out how to do myself. I also really appreciated their positive attitudes. I would definitely recommend Trust A Fro Moving Co. and would gladly use them again.",
+      "photo": ""
+    },
+    {
+      "name": "Cody D.",
+      "location": "Google review",
+      "rating": 5,
+      "text": "Etienne and Bureze are fantastic. They're experienced, respectful, and efficient. Using them for our move made it so much smoother and easier. So glad we hired them. Would absolutely recommend them to anyone.",
+      "photo": ""
+    },
+    {
+      "name": "Cyndi B.",
+      "location": "Google review",
+      "rating": 5,
+      "text": "I contacted them to move my parents and had to unfortunately reschedule twice. They were very patient with the situation. They moved them from one apartment to another in the same building. They worked very efficiently and are very kind and polite. I would give them more stars if I could. HIGHLY RECOMMEND",
+      "photo": ""
+    },
+    {
+      "name": "Julene A.",
+      "location": "Google review",
+      "rating": 5,
+      "text": "Excellent job moving my folks across town. Trust A Fro was timely, efficient, affordable and took extra care in wrapping and protecting the furniture. Highly recommend!",
+      "photo": ""
+    },
+    {
+      "name": "Connie L.",
+      "location": "Google review",
+      "rating": 5,
+      "text": "I highly recommend Trust A Fro Movers. They show up on time and they wrap carefully all your furniture with care. Their prices are reasonable. And the two gentlemen are knowledgeable and friendly. I will use them again for any type of move.",
+      "photo": ""
+    },
+    {
+      "name": "Michael B.",
+      "location": "Google review",
+      "rating": 5,
+      "text": "I personally did not hire these guys, but my neighbor did and props to the two guys that I met and helped my neighbors move. They can handle about any situation. My next move, these guys are helping me!!!",
+      "photo": ""
+    }
   ]
 }

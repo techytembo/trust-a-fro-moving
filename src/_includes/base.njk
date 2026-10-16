@@ -27,9 +27,9 @@
       <a class="brand" href="/"><img src="{{ settings.logo }}" alt="{{ settings.businessName }}"></a>
       <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
       <nav class="site-nav">
-        <a class="active" href="/#top">Home</a>
+        <a {% if navActive != "partners" %}class="active" {% endif %}href="/#top">Home</a>
         <a href="/#services">Services</a>
-        <a href="/#partner">Partner With Us</a>
+        <a {% if navActive == "partners" %}class="active" aria-current="page" {% endif %}href="/partners/">Partner With Us</a>
         <a href="/#about">About Us</a>
         <a href="/#reviews">Reviews</a>
         <a href="/#areas">Service Areas</a>
@@ -48,7 +48,7 @@
     <div class="container footer-top">
       <a href="/"><img class="footer-logo" src="{{ settings.logo }}" alt="{{ settings.businessName }}"></a>
       <nav class="footer-nav">
-        <a href="/#top">Home</a><a href="/#services">Services</a><a href="/#partner">Partner With Us</a><a href="/#about">About Us</a>
+        <a href="/#top">Home</a><a href="/#services">Services</a><a href="/partners/">Partner With Us</a><a href="/#about">About Us</a>
         <a href="/#reviews">Reviews</a><a href="/#areas">Service Areas</a><a href="/#gallery">Gallery</a><a href="/#contact">Contact</a>
       </nav>
       <div class="social">

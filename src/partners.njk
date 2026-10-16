@@ -1,0 +1,85 @@
+---
+layout: base.njk
+permalink: /partners/
+title: Partner With Us | Trust A Fro Moving Co.
+navActive: partners
+---
+{% from "icons.njk" import icon, solid, wave %}
+
+<section class="p-hero">
+  <div class="container p-hero-inner">
+    <div class="p-hero-copy">
+      <p class="eyebrow">{{ partners.hero.eyebrow }}</p>
+      <h1>{{ partners.hero.title }}</h1>
+      <p>{{ partners.hero.text }}</p>
+      <a class="btn btn-primary btn-lg" href="#partner-form">{{ solid("users", 20) }} {{ partners.hero.buttonText }} {{ icon("arrow", 16) }}</a>
+    </div>
+    <img class="p-hero-img" src="{{ partners.hero.image }}" srcset="{{ partners.hero.image | srcset }}" sizes="(max-width: 860px) 100vw, 45vw" alt="{{ partners.hero.imageAlt }}" fetchpriority="high">
+  </div>
+</section>
+
+<section class="p-who">
+  <div class="container center">
+    <p class="eyebrow">{{ partners.who.eyebrow }}</p>
+    <h2>{{ partners.who.title }}</h2>
+    <p class="p-lead">{{ partners.who.text }}</p>
+    <div class="p-cards">
+      {% for c in partners.who.items %}
+      <div class="p-card">
+        <span class="service-icon">{{ solid(c.icon, 40) }}</span>
+        <h3>{{ c.title }}</h3>
+        <p>{{ c.text }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{{ wave("--bg-partner", "--bg-reviews", 2) }}
+
+<section class="p-steps">
+  <div class="container">
+    <p class="eyebrow">{{ partners.steps.eyebrow }}</p>
+    <h2>{{ partners.steps.title }}</h2>
+    <ol class="p-step-list">
+      {% for s in partners.steps.items %}
+      <li><span class="p-num">{{ "0" + loop.index }}</span><h3>{{ s.title }}</h3><p>{{ s.text }}</p></li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>
+
+<section id="partner-form" class="quote">
+  <div class="container quote-inner">
+    <div class="quote-copy">
+      <p class="eyebrow p-eyebrow-light">{{ partners.form.eyebrow }}</p>
+      <h2>{{ partners.form.title }}</h2>
+      <p>{{ partners.form.text }}</p>
+      <ul class="contact-list" style="--cut:#0756B0">
+        <li>{{ solid("phone", 22) }} <a href="{{ settings.phone | telHref }}">{{ settings.phone }}</a></li>
+        {% if settings.email %}<li>{{ solid("mail", 22) }} <a href="mailto:{{ settings.email }}">{{ settings.email }}</a></li>{% endif %}
+        <li>{{ solid("pin", 22) }} <span>{{ settings.location }}</span></li>
+      </ul>
+    </div>
+
+    {# GitHub Pages cannot receive forms: main.js turns the answers into an email to settings.email #}
+    <form class="quote-form partner-form" name="partner" data-email="{{ settings.email }}">
+      <h3>{{ partners.form.formTitle }}</h3>
+      <label><span>Full Name <b>*</b></span><input name="name" required autocomplete="name" maxlength="120" placeholder="Your name"></label>
+      <label><span>Company / Organization</span><input name="company" autocomplete="organization" maxlength="160" placeholder="Company name"></label>
+      <label><span>Email <b>*</b></span><input name="email" type="email" required autocomplete="email" maxlength="180" placeholder="you@example.com"></label>
+      <label><span>Phone</span><input name="phone" type="tel" autocomplete="tel" maxlength="40" placeholder="(208) 555-5555"></label>
+      <label><span>Partnership Type</span>
+        <select name="partner_type">
+          {% for t in partners.form.types %}<option>{{ t }}</option>{% endfor %}
+        </select>
+      </label>
+      <label><span>City / Service Area</span><input name="area" maxlength="160" placeholder="Boise, Meridian…"></label>
+      <label class="span-full"><span>How would you like to partner?</span><textarea name="message" rows="4" maxlength="3000" placeholder="Tell us about your organization and partnership ideas…"></textarea></label>
+      <button class="btn btn-primary btn-submit" type="submit">{{ solid("send", 18) }} {{ partners.form.buttonText }}</button>
+      <p class="form-note">Opens your email app with your details filled in. This is an inquiry, not an agreement.</p>
+    </form>
+  </div>
+</section>
+
+{{ wave("--bg-quote-bottom", "--bg-footer", 1) }}
