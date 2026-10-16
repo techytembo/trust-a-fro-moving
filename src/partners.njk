@@ -55,6 +55,11 @@ navActive: partners
       <p class="eyebrow p-eyebrow-light">{{ partners.form.eyebrow }}</p>
       <h2>{{ partners.form.title }}</h2>
       <p>{{ partners.form.text }}</p>
+      {% if partners.form.benefits %}
+      <ul class="p-benefits">
+        {% for b in partners.form.benefits %}<li>{{ icon("check", 18) }} {{ b }}</li>{% endfor %}
+      </ul>
+      {% endif %}
       <ul class="contact-list" style="--cut:#0756B0">
         <li>{{ solid("phone", 22) }} <a href="{{ settings.phone | telHref }}">{{ settings.phone }}</a></li>
         {% if settings.email %}<li>{{ solid("mail", 22) }} <a href="mailto:{{ settings.email }}">{{ settings.email }}</a></li>{% endif %}

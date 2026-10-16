@@ -28,9 +28,18 @@
     ]
   },
   "form": {
-    "eyebrow": "Let’s connect",
-    "title": "Become a Trust A Fro Partner",
-    "text": "Tell us a little about your business. We’ll review your inquiry and reach out to discuss next steps.",
+    "eyebrow": "Trust A Fro Partner Program",
+    "title": "A Moving Partner You Can Trust With Your Customers",
+    "text": "When you refer a customer to a moving company, your reputation is involved too. We make the referral simple and the moving experience professional.",
+    "benefits": [
+      "Fast response to referrals",
+      "Professional moving crews",
+      "Clear communication",
+      "Straightforward estimates",
+      "Residential & commercial moving",
+      "Packing assistance",
+      "Dedicated partner contact"
+    ],
     "formTitle": "Partnership Inquiry",
     "buttonText": "Send Partnership Inquiry",
     "types": ["Real Estate Agent", "Property Manager", "Apartment Community", "Local Business", "Other"]

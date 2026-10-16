@@ -180,6 +180,9 @@ p { margin: 0 0 1em; }
 .contact-list { list-style: none; margin: 2rem 0 0; padding: 0; display: grid; gap: 1.2rem; font-weight: 500; }
 .contact-list li { display: flex; align-items: center; gap: 1rem; }
 .contact-list a { color: #fff; text-decoration: none; }
+.p-benefits { list-style: none; margin: 1.6rem 0 0; padding: 0; display: grid; gap: .6rem; font-weight: 600; }
+.p-benefits li { display: flex; align-items: center; gap: .7rem; }
+.p-benefits .icon { flex: none; stroke-width: 2.6; }
 .quote-form { display: grid; grid-template-columns: repeat(3, 1fr); gap: .9rem 1rem; background: #fff; color: var(--text); padding: 1.5rem 1.6rem 1.7rem; border-radius: 12px; box-shadow: 0 12px 30px rgb(0 20 60 / .25); }
 .quote-form h3 { grid-column: 1 / -1; margin: 0 0 .3rem; font-size: 1.35rem; font-weight: 700; }
 .quote-form label { display: grid; gap: .3rem; font-size: .74rem; font-weight: 500; color: #334155; align-content: start; }
