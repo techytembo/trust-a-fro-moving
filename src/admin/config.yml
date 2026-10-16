@@ -12,8 +12,8 @@ local_backend: true
 media_folder: src/images/uploads
 public_folder: /images/uploads
 
-site_url: https://techytembo.github.io/trust-a-fro-moving
-display_url: https://techytembo.github.io/trust-a-fro-moving
+site_url: https://trustafro.com
+display_url: https://trustafro.com
 
 collections:
   - name: pages
