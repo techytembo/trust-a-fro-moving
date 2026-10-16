@@ -97,12 +97,22 @@
     "eyebrow": "Moving gallery",
     "title": "Real Moves. Real Results.",
     "text": "Check out photos and video from some of our recent moves.",
-    "video": {
-      "desktop": "/images/video/crew-stairs-720.mp4",
-      "mobile": "/images/video/crew-stairs-480.mp4",
-      "poster": "/images/video/crew-stairs-poster.webp",
-      "label": "The Trust A Fro crew carrying a wrapped sofa up a staircase"
-    }
+    "videos": [
+      {
+        "desktop": "/images/video/crew-stairs-720.mp4",
+        "mobile": "/images/video/crew-stairs-480.mp4",
+        "poster": "/images/video/crew-stairs-poster.webp",
+        "label": "The Trust A Fro crew carrying a wrapped sofa up a staircase",
+        "sound": false
+      },
+      {
+        "desktop": "/images/video/truck-intro-720.mp4",
+        "mobile": "/images/video/truck-intro-480.mp4",
+        "poster": "/images/video/truck-intro-poster.webp",
+        "label": "A Trust A Fro mover talking about the company in front of the moving truck",
+        "sound": true
+      }
+    ]
   },
   "quote": {
     "title": "Get Your Free Quote Today",

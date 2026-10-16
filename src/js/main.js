@@ -53,9 +53,8 @@ document.querySelectorAll(".carousel").forEach((carousel) => {
   }
 });
 
-// Gallery video: plays muted only while on screen; people who prefer reduced motion get controls instead
-const video = document.querySelector(".gallery-video video");
-if (video) {
+// Silent gallery clips: play muted only while on screen; people who prefer reduced motion get controls instead
+document.querySelectorAll(".gallery-video video.autoloop").forEach((video) => {
   if (matchMedia("(prefers-reduced-motion: reduce)").matches) {
     video.controls = true;
   } else if ("IntersectionObserver" in window) {
@@ -63,7 +62,16 @@ if (video) {
   } else {
     video.play().catch(() => {});
   }
-}
+});
+
+// Clips with sound pause when scrolled away, and only one plays at a time
+const soundVideos = [...document.querySelectorAll(".gallery-video video[controls]:not(.autoloop)")];
+soundVideos.forEach((video) => {
+  video.addEventListener("play", () => soundVideos.forEach((o) => o !== video && o.pause()));
+  if ("IntersectionObserver" in window) {
+    new IntersectionObserver(([e]) => { if (!e.isIntersecting) video.pause(); }, { threshold: 0 }).observe(video);
+  }
+});
 
 // Move date: no past dates. Set at load time (not build time) so "today" is the visitor's local date
 const moveDate = document.querySelector('input[name="move_date"]');

@@ -92,15 +92,16 @@ collections:
               - { label: Small heading, name: eyebrow, widget: string }
               - { label: Heading, name: title, widget: string }
               - { label: Text, name: text, widget: text }
-              - label: Video (plays muted on a loop above the photos)
-                name: video
-                widget: object
+              - label: Videos (shown side by side above the photos)
+                name: videos
+                widget: list
                 required: false
                 fields:
                   - { label: "Video, desktop (MP4)", name: desktop, widget: file, required: false }
                   - { label: "Video, phone (smaller MP4, optional)", name: mobile, widget: file, required: false }
                   - { label: Cover image, name: poster, widget: image, required: false }
                   - { label: Description (for screen readers), name: label, widget: string, required: false }
+                  - { label: "Has sound (shows play button instead of a silent loop)", name: sound, widget: boolean, default: false }
           - label: Quote section
             name: quote
             widget: object

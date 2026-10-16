@@ -141,14 +141,17 @@ layout: base.njk
         <p>{{ home.gallery.text }}</p>
       </div>
     </div>
-    {% set v = home.gallery.video %}
-    {% if v and v.desktop %}
-    <figure class="gallery-video">
-      <img class="gallery-video-bg" src="{{ v.poster }}" alt="" aria-hidden="true" loading="lazy">
-      <video muted loop playsinline preload="none" poster="{{ v.poster }}" aria-label="{{ v.label }}">
+    {% set vids = home.gallery.videos | selectattr("desktop") %}
+    {% if vids | length %}
+    {# Silent clips loop muted while on screen; clips with sound show controls and wait for a tap #}
+    <figure class="gallery-video{% if vids | length > 1 %} two{% endif %}">
+      <img class="gallery-video-bg" src="{{ vids[0].poster }}" alt="" aria-hidden="true" loading="lazy">
+      {% for v in vids %}
+      <video {% if v.sound %}controls preload="metadata"{% else %}class="autoloop" muted loop preload="none"{% endif %} playsinline poster="{{ v.poster }}" aria-label="{{ v.label }}">
         {% if v.mobile %}<source src="{{ v.mobile }}" type="video/mp4" media="(max-width: 700px)">{% endif %}
         <source src="{{ v.desktop }}" type="video/mp4">
       </video>
+      {% endfor %}
     </figure>
     {% endif %}
     <div class="carousel gallery-carousel">
