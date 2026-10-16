@@ -59,6 +59,13 @@ if (video) {
   }
 }
 
+// Move date: no past dates. Set at load time (not build time) so "today" is the visitor's local date
+const moveDate = document.querySelector('input[name="move_date"]');
+if (moveDate) {
+  const d = new Date();
+  moveDate.min = [d.getFullYear(), String(d.getMonth() + 1).padStart(2, "0"), String(d.getDate()).padStart(2, "0")].join("-");
+}
+
 // Quote form: GitHub Pages has no form backend, so open the visitor's email app with the answers filled in
 const quoteForm = document.querySelector('form[name="quote"]');
 quoteForm?.addEventListener("submit", (e) => {
