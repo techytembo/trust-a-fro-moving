@@ -51,7 +51,7 @@
     "eyebrow": "About us",
     "title": "More Than Just Movers",
     "text": "Trust A Fro Moving Co. is a locally owned and operated moving company based in Boise, Idaho. We take pride in providing reliable, affordable, and professional moving services with a personal touch. Our team treats your home, business, and belongings with the same care and respect we would our own.",
-    "buttonText": "Learn More About Us",
+    "buttonText": "Get a Free Quote",
     "image": "/images/mascot-about.png",
     "points": [
       {
@@ -80,7 +80,7 @@
     "eyebrow": "Our service areas",
     "title": "Proudly Serving the Treasure Valley and Beyond",
     "text": "We provide moving services throughout **Boise, Meridian, Nampa, Caldwell, Eagle, Star, Kuna, and surrounding areas** — and we also offer long-distance moving across Idaho and beyond.",
-    "buttonText": "View All Service Areas",
+    "buttonText": "Ask About Your Area",
     "image": "/images/skyline.webp",
     "cities": [
       "Boise",
@@ -96,7 +96,7 @@
   "gallery": {
     "eyebrow": "Moving gallery",
     "title": "Real Moves. Real Results.",
-    "text": "Check out photos from some of our recent moves.",
+    "text": "Check out photos and video from some of our recent moves.",
     "video": {
       "desktop": "/images/video/crew-stairs-720.mp4",
       "mobile": "/images/video/crew-stairs-480.mp4",

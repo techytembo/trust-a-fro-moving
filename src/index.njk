@@ -194,7 +194,7 @@ layout: base.njk
           {% for s in services.items %}<option>{{ s.title }}</option>{% endfor %}
         </select>
       </label>
-      <label class="span-2"><span>Message / Details</span><input name="details" placeholder="Tell us about your move (home size, items, etc.)"></label>
+      <label class="span-2"><span>Message / Details</span><textarea name="details" rows="2" maxlength="2000" placeholder="Tell us about your move (home size, items, etc.)"></textarea></label>
       <p class="submit-label">{{ home.quote.buttonText }}:</p>
       <div class="submit-row">
         <button class="btn btn-primary btn-submit" type="submit" value="text">{{ solid("chat", 18) }} Text Us</button>

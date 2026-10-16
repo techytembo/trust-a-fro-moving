@@ -21,6 +21,12 @@ if ("IntersectionObserver" in window && sections.length) {
     { rootMargin: "-45% 0px -50% 0px" }
   );
   sections.forEach((s) => io.observe(s));
+  // Near the top of the page, Home is the active link (the hero is too short to reach the middle band)
+  const atTop = () => {
+    if (scrollY < 150) links.forEach((a) => a.classList.toggle("active", a.getAttribute("href").endsWith("#top")));
+  };
+  addEventListener("scroll", atTop, { passive: true });
+  setTimeout(atTop, 50);
 }
 
 // Buttons with data-service preselect the quote form's move type
